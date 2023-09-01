@@ -1,6 +1,7 @@
 lsi: false
 safe: true
 source: .
+destination: ./docs # Carpeta donde se generará el sitio compilado
 incremental: false
 highlighter: rouge
 markdown: kramdown
@@ -8,19 +9,11 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
-  - .git
-  - .github
-  - .vscode
-  - _site
-  - .jekyll-cache
-  - .jekyll-metadata
+  - docs # Evitar bucle infinito de generación
 plugins:
   - jekyll-feed
-  - jekyll-sitemap
+
 kramdown:
+  input: GFM
   math_engine: mathjax
   syntax_highlighter: rouge
